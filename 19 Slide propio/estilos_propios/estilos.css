@@ -1,0 +1,92 @@
+div.slidePrincipal
+{
+    position: relative;
+    width: 1024px;
+}
+
+div.slidePrincipal ul
+{
+    display: block;
+    width: 1024px;
+    height: 768px;
+    padding: 0;
+    background-color: red;
+    list-style: none;
+    display: flex;/*Poner en linea sus elementeos*/
+    overflow: hidden;/*Esconder lo que sobrede su contenedor*/
+}
+
+div.slidePrincipal ul li
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: 0px;
+}
+
+
+
+/*Botons laterales*/
+div.btnMovimiento
+{
+    color: white;
+    background-color: rgba(0,0,0,.6);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    transition: all .7s ease;
+    cursor: pointer;
+    padding-top: 5px;
+
+    /*Posicion absouta para poderlas ubicar*/
+    position: absolute;
+}
+
+div.btnMovimiento:hover
+{
+    color: #333;
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid black;
+    transition: all .7s ease;
+}
+
+div#btnSiguiente
+{
+    right: 0;
+    top: 400px;
+    margin-right: 10px;
+}
+
+div#btnAtras
+{
+    left: 0;
+    top: 400px;
+    margin-left:10px; 
+}
+
+
+/******************************/
+/*BOTONES DE SELECION MULTIPLE*/
+
+div.botonera
+{
+    display: flex;
+    text-align: center;
+    position: absolute;
+    top: 720px;
+    right: 421px;
+}
+
+div.btnSeleccionActual
+{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255,255,255,0.7);
+    margin-left: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}

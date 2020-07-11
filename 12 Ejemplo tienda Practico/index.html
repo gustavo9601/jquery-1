@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container text-center">
+
+
+
+
+
+            <h1>Tienda de Ropa  <small>'GUS</small></h1>
+            <hr>
+
+            <div class="col-sm-2" id="imgPequenas">
+                <img src="img/11.jpg" alt="azul" class="img-responsive img-rounded img-thumbnail miniatura">
+                <img src="img/22.jpg" alt="amarilla" class="img-responsive img-rounded img-thumbnail miniatura">
+                <img src="img/33.jpg" alt="naranja" class="img-responsive img-rounded img-thumbnail miniatura">
+            </div>
+            <div class="col-sm-5" id="imgGrandes">
+                <img src="img/azul.jpg" alt="" class="img-responsive" id="imgCamisaGrande">
+
+            </div>
+            <div class="col-sm-5" id="descripcion">
+                <h2>Camiseta Especial <small id="color">gris</small></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo odit maiores repudiandae eligendi optio molestias consectetur tenetur laboriosam. Eligendi dolorum quasi quisquam, voluptates odit. Reiciendis eos unde fuga? Perferendis, natus!</p>
+                <h3>Precio <small id="precio">32$</small></h3>
+            </div>
+
+        </div>
+
+
+        <script type="text/javascript">
+
+            (function(){
+
+
+
+
+                $('img.miniatura').on("click",function(){
+
+
+
+                    var seleccion = $(this).attr('alt');
+                    console.log(seleccion);
+                    
+                    
+                    /*seleccionamos las imagenes grandes
+                    fadeOut indica la salida en milisegundos
+                    dadeIn indica la entrada en molisegudnos
+                    */
+                    $('img#imgCamisaGrande').fadeOut(500)
+                                            .fadeIn(300)
+                                            .attr('src','img/'+seleccion+'.jpg');// modificamos el url
+                    $('small#color').text(seleccion);
+                                    
+
+
+
+
+
+
+                    switch(seleccion){
+                        case "amarilla": 
+                            $('small#precio').text(123123 + " $");
+                            break;
+                        default:
+                            $('small#precio').text(0 + " $");
+                            break;
+                    }
+
+                });
+
+
+            })();
+        </script>
+
+    </body>
+</html>

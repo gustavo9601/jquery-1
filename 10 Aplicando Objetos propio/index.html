@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container">
+            <h1>Aplicando lo Aprendido</h1>
+            <hr>
+
+            <button class="btn btn-primary btn-lg btn-block" id="miBoton">
+                Click y apareceran 5 DIV !!
+            </button>
+
+            <div id="invisible"></div>
+
+        </div>
+
+
+        <!--script javascript-->
+
+        <script type="text/javascript">
+
+
+            $('button#miBoton').on('click',function(){
+
+                //cilco se repetira 5 veces
+                for(var i = 0; i < 5; i++){
+                    $('<div>',{//agregare un div
+                        class: "col-md-12"//con class
+                    })
+                        .appendTo('div#invisible')//dentro de div#invisible
+                        .css({//propiedades css en forma de objeto
+                        height: "200px",
+                        background: "beige",
+                        margin: "10px",
+                        border: "1px solid black"
+
+                    })
+                        .html('<h1>Caja # '+i+'</h1>');//modifico el html en cada caja
+                }
+
+            });
+
+
+
+
+
+        </script>
+
+    </body>
+</html>

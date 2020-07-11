@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container">
+            <h1>Efecto Acordeon</h1>
+            <hr>
+
+
+            <div align="center">
+                <h2>Acordeon 1</h2>
+                <dl>
+                    <dt class="titulo1">Titulo del Acrodeon</dt>
+                    <dd class="acorden1">Este es el detalle del acordeon</dd>
+                    <dt class="titulo1">Titulo del Acrodeon</dt>
+                    <dd class="acorden1">Este es el detalle del acordeon</dd>
+                    <dt class="titulo1">Titulo del Acrodeon</dt>
+                    <dd class="acorden1">Este es el detalle del acordeon</dd>
+                    <dt class="titulo1">Titulo del Acrodeon</dt>
+                    <dd class="acorden1">Este es el detalle del acordeon</dd>
+                    <dt class="titulo1">Titulo del Acrodeon</dt>
+                    <dd class="acorden1">Este es el detalle del acordeon</dd>
+                    <dt class="titulo1">Titulo del Acrodeon</dt>
+                    <dd class="acorden1">Este es el detalle del acordeon</dd>
+                    <dt class="titulo1">Titulo del Acrodeon</dt>
+                    <dd class="acorden1">Este es el detalle del acordeon</dd>
+                </dl>
+                <br>
+                <br>
+                <br>
+                <h2>Acorden 2</h2>
+                <dl>
+                    <dt class="titulo">Titulo del Acrodeon</dt>
+                    <dd class="acorden">Este es el detalle del acordeon</dd>
+                    <dt class="titulo">Titulo del Acrodeon</dt>
+                    <dd class="acorden">Este es el detalle del acordeon</dd>
+                    <dt class="titulo">Titulo del Acrodeon</dt>
+                    <dd class="acorden">Este es el detalle del acordeon</dd>
+                    <dt class="titulo">Titulo del Acrodeon</dt>
+                    <dd class="acorden">Este es el detalle del acordeon</dd>
+                    <dt class="titulo">Titulo del Acrodeon</dt>
+                    <dd class="acorden">Este es el detalle del acordeon</dd>
+                    <dt class="titulo">Titulo del Acrodeon</dt>
+                    <dd class="acorden">Este es el detalle del acordeon</dd>
+                    <dt class="titulo">Titulo del Acrodeon</dt>
+                    <dd class="acorden">Este es el detalle del acordeon</dd>
+                </dl>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <script type="text/javascript">
+
+            /*Funcion anonima*/
+            (function (){
+                // hacemos referencia al elemtno dd y lo guardamos en la variable
+                var dds = $('dd.acorden1');
+
+                //.hide esconde los elementos dds
+                dds.hide();
+
+                // selecionoo los dt con el mouseenter se dispara cuando haga hover
+                $('dt.titulo1').on('mouseenter',function(){
+                    $(this)// con this selecciona al mismo dt
+                        .next().show();//next selecciona al sisguiente elemento en jerequia y con show invoca mostrarlo
+                });
+
+                // selecciona los dt
+                // con mouseleave cuando quiete el muse dol objeto se disparara
+                $('dt.titulo1').on('mouseleave',function(){
+                    $(this)
+                        .next().hide(); // con next y hide hace que el elemento siguiente se esconda
+                })
+
+            })();//() invoco a la funcion anonima
+
+
+
+            /*Segundo acordeon con efectos propios de JQuery*/
+            (function (){
+                // guarfamos en variables la seleccion de los elementos
+                var ddss = $('dd.acorden');
+                var dts = $('dt.titulo');
+                
+                //escondemos los dds
+                ddss.hide();
+                // eq seleccionamos la posicon 0
+                //con show mostramos el elemento
+                ddss.eq(0).show();
+                
+                //cuando se haga hover en dts se dispara el evento
+                dts.on('mouseenter',function(){
+                    // con slideUp hacemos que se cierre o desparesca el elemento de arriba hacia abajo, el siguiente parametro es el tiempo en ms
+                    ddss.slideUp(200);
+                    
+                    // seleccionamos el elemento actual que es dts con this
+                    //next seleccionamos el sisguiente elemento en orden jerarquico
+                    //slideDown permite aparecer con efecto el ojeto en mencion , el siguiente parametro es ele tiempo en ms segundos
+                    $(this).next().slideDown(200);
+                   
+                    //this selecionamos el actual elemento
+                    // next seleccionamos el sgiueitne elemetno
+                    // cambiamos el css
+                    $(this).next().css('background','rgb(178, 170, 170)');
+                    
+                    
+                    
+                });
+
+
+                })();
+
+
+        </script>
+        
+ 
+
+    </body>
+</html>

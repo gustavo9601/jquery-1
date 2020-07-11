@@ -1,0 +1,32 @@
+
+/*
+MI JSON COMO EJEMPLO QUE PASARE A LA WEB
+
+*/
+{
+    
+    "foto": "http://placehold.it/32x32",
+    "nombre": "Gustavo Marquez",
+    "direccion": "Bosa Estacion",
+    "Genero": "Masculino",
+    "Telefono": 1231243124,
+    "activo": false,
+    "balance": "$2,222.36",
+    "tags": [
+        "hombre",
+        "casado",
+        "universitario"
+    ],
+    "amigos":[
+        {
+            "id": 0,
+            "nombre": "Sandra"
+        },
+        {
+            "id": 1,
+            "nombre": "Jose"
+        }
+    ]
+
+
+}

@@ -1,0 +1,13 @@
+input.textNumero
+{
+    width: 300px;
+    padding: 10px;
+    color: rgba(34, 34, 34, 0.66);
+}
+
+label
+{
+    color: rgba(34, 34, 34, 0.66);
+    font-size: 20px;
+    margin-left: 100px;
+}

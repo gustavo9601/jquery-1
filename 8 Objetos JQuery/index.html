@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container">
+            <h1>Objetos de Javascript</h1>
+            <small>Comprendidendo lo basico</small>
+
+            <h3>Mirar la Consola</h3>
+
+            <button class="btn btn-primary">
+                Click para ECENDER!!
+            </button>
+            <button class="btn btn-danger">
+                Click para APAGAR !!
+            </button>     
+
+        </div>
+
+
+        <!--script javascript-->
+
+        <script type="text/javascript">
+
+            var carro = {
+                encendido: false,
+                llantas: 4,
+                puertas: 5,
+                marca: "Toyota",
+                colores: ["Axul","Verde","Blanco"],
+                fabricante: {
+                    creador: "Toyota",
+                    telefono: 222222,
+                    direccion: "xyz avenida 23"
+                },
+
+                arrancarFuncion: function(){
+
+                    if(carro.encendido === true){
+                        console.log("El carro ya estab encendido");
+                    }else{
+
+
+                        console.log("Encendiendo el carro...");
+                        carro.encendido = true;
+                    }
+                },
+
+                apagarFuncion: function(){
+                    if(carro.encendido === true){
+                        console.log("El carro se esta apagando...");
+                        carro.encendido = false;
+                    }else{
+                        console.log("El carro ya esta apagado")
+                    }
+
+                }
+
+
+            };
+            /*Mostrando el objeto carro*/
+            console.log( carro );
+            /*Mostrando el objeto carro espcificando sus propiedades*/
+            console.log( "Puertas = ",carro.puertas," Marca = ",carro.marca ," Colores = ",carro.colores.length," Color escogido = ",carro.colores[2]," El creador = ",carro.fabricante.creador);
+
+            /*Le asignamos a la variable una posicion de memoria*/
+            var acortador = carro.fabricante;
+            console.log(acortador);
+            console.log("direccion = ",acortador.direccion);
+
+
+
+            /*Añaiendio el evento de encender y pagar al los botonses*/
+            $('button.btn-primary').on('click',function(){
+                carro.arrancarFuncion();
+            })
+
+            $('button.btn-danger').on('click',function(){
+                carro.apagarFuncion();
+            })
+
+        </script>
+
+    </body>
+</html>

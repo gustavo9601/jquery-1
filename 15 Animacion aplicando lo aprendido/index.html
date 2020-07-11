@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Aplicando lo Aprendido</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container" align="center">
+            <h1>Aplicando lo <small>Aprendido</small></h1>
+            <!--Controles de movimineto-->
+            <div class="col-sm-6" >
+                <h2>CONTROLES DE MOVIMINETO</h2>
+                <hr>
+                <button class="btn btn-primary control" id="btnArriba">Arriba</button>
+                <button class="btn btn-primary control" id="btnAbajo">Abajo</button>
+                <button class="btn btn-primary control" id="btnDerecha">Izquierda</button>
+                <button class="btn btn-primary control" id="btnIzquierda">Derecha</button>
+                <button class="btn btn-danger control" id="btnReset">RESET</button>
+                <button class="btn btn-succes control" id="grande">AGRANDAR A LA CAJA</button>
+                <button class="btn btn-succes control" id="pequeno">EMEPEQUEÑECER LA CAJA</button>
+            </div>
+            <!--Anadiendo cajas o quitanto cajas-->
+            <div class="col-sm-6">
+                <h2>AGREGAR O QUITAR CAJAS</h2>
+                <hr>
+                <button class="btn btn-info btn-lg" id="bntAgregar">Agragar Caja</button>
+                <button class="btn btn-warning btn-lg" id="btnQuitar" >Quitar Cajas</button>
+                <button class="btn btn-default btn-lg control" id="btnMultiples" >MULTIPLES EFECTOS !!</button>
+            </div>
+
+
+            <div class="col-sm-12" id="espacioTrabajo">
+                <hr>
+                <div id="juegoCajas"> 
+                 
+                 <!--En comentarios que no se necesita-->
+                <!--<div class="cajaNueva">
+                        <h3>Caja N1</h3>
+                    </div>-->
+
+                </div>
+            </div>
+
+            <br><br>
+
+
+
+
+
+        </div>
+    </body>
+
+
+    <!--Inconcando al script donde estan las animaciones-->
+    <script type="text/javascript" src="js/javascript.js"></script>
+</html>

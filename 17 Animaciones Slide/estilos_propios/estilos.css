@@ -1,0 +1,18 @@
+div.slideShow
+{
+    width: 600px;
+    height: 300px;
+    overflow: hidden; 
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+div.slideShow ul 
+{
+    padding: 0;
+    list-style: none;
+    margin-left: 0;
+    display:flex; /*Hace que todos los elementos se alinen horizontalmente*/
+    
+}
+

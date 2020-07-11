@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container text-center">
+
+
+
+
+
+            <h1>Objetos Practicos <small>Ejemplo de Vehiculo</small></h1>
+
+
+            <div class="divVistaPrevia">
+
+                <!--Contenedor que se mostrara cuando mientras el cambio de imagen-->
+                <div class="divPreloader">
+                    <img src="img/load1.gif" class="imgLoader">
+                                       
+
+                </div>
+
+
+                <img src="img/negro.png" alt="" id="imgCarro" class="img-responsive">
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    <select name="" id="cmbColor" class="form-control">
+
+                        <!--<option value="blanco">Blanco</option>-->
+
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <!--jquery-->
+        <script>
+
+            /*encapsualamos jquery en una funcion para no confundir con los demas scrits*/
+
+            (function(){
+                    
+                //objeto princiapl
+                var teslaView = {
+                    //variable objeto que contiene al div preLaoder
+                    loader: $('div.divPreloader'),
+                    
+                    /*Arreglo de colores con :*/
+                    colores : ['negro','rojo','blanco','gris','amarillo'],
+
+
+
+                    /*Funcion intermedieria en el cambio de imagenes*/
+                    //recibe una imagen
+                    cambiaColor: function( img ){
+                        //variable le asignamos el objeto de arriba que contiene al prevLoader
+                       var loader = teslaView.loader;
+                        //seleccionamos la variable y el fadeIn indica que aparece en milesimas de segundo
+                        loader.fadeIn(700);
+                        
+                        
+                        // creee una imagen
+                        $('<img>',{
+                            src: img,//src va a ser el url
+                            class: "img-responsive imgLoader"//clase de boostrap
+                        })
+                            .load( "",function(){//.load cuando termina de cargar haga ESTO:
+                            
+                                //seleccionamos la variable
+                                //el fadeout desaparesca en tantos milisegundos
+                                  loader.fadeOut(700);
+                                        
+                                })
+                            
+                           
+                    },
+
+
+                    //funcion dentro del objeto
+                    init: function(){
+                        //ciclo que recorra las posicion del arreglo colores
+                        for(var i = 0; i < teslaView.colores.length; i++)
+                        {
+                            //varaible que guarda el valro de la posicion del arreglo colores
+                            var colorSeleccionado = teslaView.colores[i];
+                            var url = "img/"+colorSeleccionado+".png";
+
+                            /*AGREGACION DE OBJETOS AL SELECTC OPTION*/    
+                            //le decimos a JQUERY que agregue una option
+                            //le pasamos en un objeto las caracteristicas
+                            //appendto -- agregue dentro de select
+                            $('<option>',
+                              {
+                                value: colorSeleccionado,
+                                text: colorSeleccionado
+                            }).appendTo('select#cmbColor');
+
+                        }
+
+
+                        //Funcion que detecta el cambio de seleccion
+                        //selecionamos el selector
+                        //.bind -- es como copiar el evento a la funcion o objeto actual
+                        //change detecta el cambio y le pasamos una funcion
+                        $('select#cmbColor').bind('change',function(){
+                            //guardamos en una variable el valor seleccionado, el this es el mismo select#cmbColor
+                            var color = $(this).val();
+                            //variable de url para modificar el src
+                            var url = "img/" + color + ".png";
+                            
+                            //incocamos el objeto y luego la funcion, y le pasamos por parametro el url
+                            teslaView.cambiaColor( url );
+                            
+                            
+                            //caputuramos la imagen y le modificamos el src
+                            $('img#imgCarro').attr( 'src',url );
+
+                        });
+
+
+
+                    }
+
+
+                }
+
+
+                //invocando a la funcion de arriba
+                teslaView.init();
+
+
+            }());
+        </script>
+
+    </body>
+</html>

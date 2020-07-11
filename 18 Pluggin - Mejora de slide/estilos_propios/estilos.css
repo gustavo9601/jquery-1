@@ -1,0 +1,39 @@
+div.slideShow
+{
+    width: 600px;
+    height: 300px;
+    overflow: hidden; 
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+div.slideShow ul 
+{
+    padding: 0;
+    list-style: none;
+    margin-left: 0;
+    display:flex; /*Hace que todos los elementos se alinen horizontalmente*/
+
+}
+
+
+
+/*Botones de control*/
+div.slideShowButtons 
+{
+    width: 600px;
+    display: flex; /*para que este su contenido alineado horizontalmente*/
+    position: relative;
+    top: -30px;
+    margin-left: 10px;
+}
+
+div.slideShowButtons div.slideButton
+{
+    cursor: pointer;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    background-color: #a1a1a1;
+    margin-right: 5px;
+}

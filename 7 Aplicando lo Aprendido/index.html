@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!--Viwport para responsive-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="stylesheet" href="estilos_propios/estilos.css">
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <!--Enlazando el JQuery-->
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+    <!--Enlzace del boostrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="UTF-8">
+
+    <!--Estilos-->
+    <style>
+
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Container es propio de boostrap-->
+    <div class="container">
+        <h1>Aplicando lo Aprendido</h1>
+
+
+        <div class="form-group">
+            <button class="btn btn-primary btn-lg active" id="miBoton">Click !!!!</button>
+            <label for="miInputt">Escoge Algun Numero !</label>
+            <input type="number" class="textNumero" placeholder="Digita algun Numero" id="miInput" name="miInputt">
+        </div>
+        <hr>
+        <!--Tabla de mulstiplicar-->
+        <table class="table table-striped">
+            <!--thead cabecera-->
+            <thead>
+                <!--tr fila-->
+                <tr>
+                    <th>Base</th>
+                    <th>X</th>
+                    <th>Numero</th>
+                    <th>=</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <!--cuerpo de la tabla-->
+
+
+
+        </table>
+
+
+    </div>
+
+
+    <script type=text/javascript>
+        /*Funcion Princiapl*/
+        (function() {
+
+
+
+            // variable contadora
+            var contador = 0;
+            // capturao el evento click del boton y le paso una funcion
+            $('button#miBoton').on('click', function() {
+                // capturo lo tipeado en el input
+                var base = $('input#miInput').val();
+                contador++; //incremento del contador en 1
+                var resutlado = base * contador;
+                var trDinamica = "<tr><td>" + base + "</td><td>*</td><td>" + contador + "</td><td>=</td><td>" + resutlado + "</td></tr>";
+                //var trDinamica = "<h1>Hola "+contador+"</h1>"
+                //imprimo la informacion en consola
+                console.log(base, " * ", contador, " = ", resutlado);
+                //capturo el thead de la tabla y le agregara lo que contiene la variable trDinamica
+                $('thead').append(trDinamica);
+
+
+
+                /*Funcion que detecta el cambio en el input*/
+                //le pasamos el input ocn el id
+                //.onchange detecta si hubo algun cambio y se dispara una funcion
+                $('input#miInput').on('change', function() {
+
+                    // Seleccionamos el tr
+                    //not -- no seleccione este
+                    //:eq(0) selecciona la posicion 1 de tr
+                    //remove() -- remueve todo lo que le pasemos
+                    $('tr').not(':eq(0)')
+                        .remove();
+
+                    console.log("Validando El cambio");
+                    // inicializamos el contador a 0
+                    contador = 0;
+                })
+
+
+            });
+        })();
+    </script>
+
+
+</body>
+
+</html>

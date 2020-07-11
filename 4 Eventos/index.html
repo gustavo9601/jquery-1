@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+            section
+            {
+                border: 2px solid #6b68c7;
+            }
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container">
+            <h1>Control de Eventos</h1><hr>
+
+            <section>
+                <h3>Evento Clcik</h3>
+                <button class="btn btn-primary" id="boton1">
+                    Evento 1 Click Aparece!
+                </button>
+                <button class="btn btn-secondary" id="boton4">
+                    Evento 1 Clcik Desaparece!
+                </button>
+                <p id="parrafo1"></p>
+            </section>
+
+            <section>
+                <h3>Evento hover</h3>
+                <img src="http://placehold.it/350x150" alt="" class="img100" >
+                <p id="parrafo2"></p>
+            </section>
+
+            <section>
+                <a href="https://www.google.com"  class="link1">
+                    Soy Un Linck Bloqueado por JQuery
+                </a>
+            </section>
+            <section>
+                <button class="btn btn-primary" id="boton2">
+                    Dame Clcik Cambiare el Windows Location !!
+                </button>
+            </section>
+
+        </div>
+
+
+        <!--Los eventos, es cuando ocurre algo -->
+
+
+
+
+        <script type="text/javascript">
+
+            //Evento onClcik  *******          
+            //Selecionamos el id boton1
+            // on.click -- cuando alguien haga click en el id
+            // le apsamos una funcion aninima por paramtro
+            $('#boton1').on('click',function(){
+
+                $('p#parrafo1').html('Hola Apreci al darme click');//seleciono al parrafo id 1 y le cambio el html
+
+            });
+            
+            // Seleccionamos la seccion y los botones
+            // mostramos por consola qu eel evento este funcional
+            // modificamos el html del parafo
+            $('button#boton4').on('click',function(){
+                console.log("Voy a desaparecer");
+                $('p#parrafo1').html('  ');
+            })
+
+
+
+            // Imagen*******
+            //on.mosuenter -- es igual a hover
+            $('img.img100').on('mouseenter',function(){
+                $(this).attr('src','img/1.jpg');
+
+                $('p#parrafo2').html('Apareci al hacer Hover sobre la imagen');
+                console.log("Mouse Entra");
+            });
+            //on.mouseleave -- cuando salgo del hover de la iamgen
+            $('img.img100').on('mouseleave',function(){
+
+                //this accedemos al objeto inicial -- (img.img100)
+                //attr src cambiamos el atributo de tipo source
+                $(this).attr('src','http://placehold.it/350x150');
+
+                // modificamos el css
+                $('p#parrafo2').css('display','none');
+                // mostramos por consola
+                console.log("Mouse sale");
+
+            });
+
+
+            //Lick <a>*******
+            $('a.link1').on('click',function(variable){
+                variable.preventDefault(); //creamos la varaible -- y le pasamos por paramtro el reventDefault que inhabilita el link
+
+                //guarfamos en la variable el atributo href del enlace
+                var capturaURL = $(this).attr('href');               
+                console.log('El url Capaturado es = ',capturaURL);
+            });
+
+
+            
+            //link 2 cambiar el window location
+            //seleccionamos el boton
+            // con el evento on.click y le pasamos la function
+            // el window.location actua como enlace para cambiar de pagina
+            $('button#boton2').on('click',function(){
+                var link_google = "https://google.com"
+                window.location = link_google;
+            })
+
+
+
+            /*Evento que se activara cuando todo el Docuemtn HTML y demas ya esta cargado se dispara el eventeo*/
+            $(document).ready(function(){
+                console.log("Joder Tio ya cargo la pagina");
+            })
+
+
+
+
+
+        </script>
+
+    </body>
+</html>

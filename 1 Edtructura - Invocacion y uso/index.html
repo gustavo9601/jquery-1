@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <link rel="stylesheet" type="text/css" href="css/estilos.css">
+   <script type="text/javascript" src="js/javascript.js"></script>
+   <!--Enlazando el JQuery-->
+   <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <meta charset="UTF-8">
+    
+    <!--Estilos-->
+    <style>
+        .agregandoClase
+        {
+            list-style: none;
+            position: relative;
+            display: block;
+            padding: 15px;
+            background-color: rgba(0,0,0,.5);
+        }
+        
+        .texto
+        {
+            font-size: 50px;
+            font-family: monospace;
+            padding: 50px
+        }
+    
+    </style>
+    
+        
+    <!--Scritp -->
+    <script>
+        
+    /*Forma 1*/
+        // invocamos a la funcion y le pasamos el document total
+        // con ready validamos que el documento cargo
+        // le pasamos una funcion anonima para que ejecute algo una ves cargado todo el documento
+        $( document ).ready(function(){
+            //invocamos la funcion le pasamos por parametro las p
+            // le modificamos el css
+            $('p').css('font-size','60px');
+            $('a').css('color','yellow');
+        });
+        
+    /*Forma 2*/
+        //invocamos a funcion $, le pasamos una funcion annima pero a la vez se carga el readey de la funcion de arriba , esta es la forma abreviada
+        $(function(){
+            //invocamos la funcion, pasamos por parametro as p y le modificamos el css
+            $('p').css( 'padding','50px');
+
+        })
+    
+    </script>
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+        <li>Hola 1</li>
+        <li>Hola 2</li>
+        <li>Hola 3</li>
+        <li>Hola 4</li>
+    </ul>
+    
+    <div>
+            <ul class="negrita">
+                <li>Hola somos negritas 1</li>
+                <li>Hola somos negritas 2</li>
+                <li>Hola somos negritas 3</li>
+            </ul>
+    </div>
+    
+    <h2>Probando con el Signo $</h2>
+    
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis eaque magni corrupti maiores quis iste praesentium non autem doloremque porro culpa veritatis nihil nobis, tempore ullam necessitatibus perspiciatis pariatur corporis.</span><span>Quos facere, dolor quaerat? Expedita animi repellendus incidunt delectus sequi neque nostrum assumenda a, eveniet ipsum commodi, accusantium omnis, veritatis fuga tenetur provident sint deserunt quo, modi obcaecati perferendis. Ducimus?</span></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim placeat laudantium modi fugit eos porro rerum odit facilis iure ad at earum, cum error soluta reprehenderit aliquid nostrum voluptatibus pariatur.</p>
+    <p>Dolorem minima aspernatur architecto asperiores voluptatem dolore quo ab, laboriosam officiis maiores quasi necessitatibus fuga dolores soluta fugit vero, nisi error dolorum. Consequuntur nemo eius saepe pariatur totam non qui!</p>
+    
+    
+    
+    <a href="#">Hola soy una a</a>
+    
+    
+    <!--Javascript en JQury-->
+    
+    <script>
+    /*JQury es una funcion
+    jquery();
+    */
+    
+        
+    // invocamos a jquery y le pasamos la etiqueta ul
+        // le decimos que cambie el css el color
+    jQuery('ul').css('color','blue');
+    // invocamos la funcion y le pasamos la etiqueta ul
+        // le añadimos una clase a la etiqueta
+    jQuery('ul').addClass('agregandoClase');   
+        
+    //invocamos la funcion y le pasamos el ultimo li de la lista y modificamos si css
+    $('li:last-child').css( 'background-color','green');
+    
+    //invocmaos a la funcion y le pasamos la etiqueta div
+        //modificamos el css
+    jQuery('div').css('font-weight','bold');   
+    jQuery('div').css('font-size',"25px");
+        
+    // invocamos a la funcion que $ es lo mismo a jQuery 
+        //pasamos un h2 y le añadimos una clase
+    $('h2').addClass('texto');    
+    </script>
+    
+</body>
+</html>

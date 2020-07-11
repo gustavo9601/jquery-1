@@ -1,0 +1,37 @@
+div.divPreloader
+{
+    position: absolute;
+    width: 100%;
+    opacity: 0.7;
+    display: none;
+
+}
+
+div.divPreloader img.imgLoader
+{
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    top: 150px;
+}
+
+
+/*antes de llegar a 100 aplica*/
+@media (max-width: 1000px)
+{
+    div.divPreloader img.imgLoader
+    {
+        top: 100px;
+        width: 150px;
+    }
+}
+
+/*antes de llegar a 700 aplica*/
+@media  (max-width: 700px)
+{
+    div.divPreloader img.imgLoader
+    {
+        width: 100px;
+        top: 50px;
+    }
+}

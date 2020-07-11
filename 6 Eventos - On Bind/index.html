@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+        
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container">
+            <h1>Evento On y Bind</h1>
+            <hr>
+
+            <h3>Click me !!!</h3>
+
+
+        </div>
+
+
+
+        <script type="text/javascript">
+            // de esta forma se encapsula las variables y funciones de esta forma no se confunden con las demas librerias
+            (function (){
+                var contador = 0 ;//contador 
+                var h3Dinamico = "<h3>Aparesco al Final...</h3>";
+                var h3DianmicoI = "<h3> Apresco al inicio .. </h3>";
+
+
+
+
+                $('h3').on('click',function(){
+                    
+                    console.log("Se preciono el clcik");
+                    
+                    // variable que se comporara como etiqueta y le pasamos dentro de la misma el contador que ira incrementando cada vez que si pinche
+                    var h3DinamicoC = "<h3>A paresco denro del container"+contador+"</h3><hr>"
+
+                    // selecionamos el body
+                    //append es ingrese algo
+                    // le apsasmos por parametro la variable
+                    $('body').append(h3Dinamico);
+                    // prepend aparece justo al inicio del body
+                    $('body').prepend(h3DianmicoI);
+
+                    // prepend aparece al final del contenedor 
+                    contador ++; //incrementara en 1 cada vez que inchemos
+                    $('div.container').append(h3DinamicoC);
+
+                })
+            })();
+        </script>
+
+    </body>
+</html>

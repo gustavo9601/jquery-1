@@ -1,0 +1,38 @@
+div.cajaRoja
+{
+    /*Es necesario tener una posicion para que jequery lo entienda*/
+    position: relative;
+    height: 50px;
+    width: 50px;
+    /*background-color: red;*/
+    background-image: url('../img/carro.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin-rigth: 10px;
+    
+    transform: rotateX(10deg)
+}
+
+
+div.cajaAzul
+{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    /*background-color: red;*/
+    background-image: url('../img/carro2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin-rigth: 10px;
+}
+
+div.pistaCarreras
+{
+    width: 100%;
+    background-image:url('../img/circuitocarreras.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}

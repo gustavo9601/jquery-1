@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	
+ var fecha = new Date();
+    var dia = fecha.getDate();
+    var mes = fecha.getMonth() + 1 ;
+    var ano = fecha.getFullYear();
+    var hora = fecha.getHours();
+    var minutos = fecha.getMinutes();
+    var segundos = fecha.getSeconds();
+    var milisegundos = fecha.getMilliseconds();
+
+
+if(dia < 9){
+	dia = '0' + dia;
+}
+
+if(mes < 9)
+{
+	mes = '0' + mes;
+}
+
+
+document.write(ano + "-" + mes + "-" + dia + " " + hora + ":" + minutos + ":" + segundos);
+
+
+</script>
+</body>
+</html>

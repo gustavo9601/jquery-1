@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+            img
+            {
+                width: 200px;
+                height: 200px;
+            }
+            hr
+            {
+                margin-bottom: 60px;
+            }
+
+
+            /*Clase*/    
+            .parrafos
+            {
+                background-color: rgba(0,0,0,.3);
+                color: white;
+            }
+            .parrafos:hover
+            {
+                font-size: 15px;
+                color: #000    ;
+                transition: all 1s ease;
+            }
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Selectores y Encadenamiento</h1>
+            <hr>
+            <!--row es de 12 filas-->
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <img src="http://lorempixel.com/200/200/" alt="" class="img-circle">
+                    <h4>Gato de Gustavo M</h4>
+                </div>
+
+                <div class="col-sm-5">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptas vero illum, cupiditate perferendis, iste, placeat ipsum modi repellat suscipit aperiam expedita vel distinctio. Voluptates praesentium voluptate, quos ipsa neque!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisic
+                        ing elit. Totam voluptas vero illum, cupiditate perferendis, iste, placeat ipsum modi repellat suscipit aperiam expedita vel distinctio. Voluptates praesentium voluptate, quos ipsa neque!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptas vero illum, cupiditate perferendis, iste, placeat ipsum modi repellat suscipit aperiam expedita vel distinctio. Voluptates praesentium voluptate, quos ipsa neque!
+                    </p>
+
+                </div>
+
+                <div class="col-sm-3">
+                    <ul>
+                        <li>Matematicas</li>
+                        <li>Ciencias</li>
+                        <li>Español</li>
+                        <li>Fisica</li>
+                        <li>Geografia</li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="row" id="miParrafo">
+
+            <p class="col-sm-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste perspiciatis, expedita ex? Tempore rerum et officiis ex ab sit, quos explicabo eius iste commodi, eveniet eligendi quidem optio velit aliquam.</p>
+            <p class="col-sm-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vel doloribus quo sed aut eligendi temporibus earum numquam, assumenda libero cupiditate expedita corrupti nulla reiciendis delectus nemo vero suscipit eveniet.</p>
+            <p class="col-sm-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum excepturi ea, quam assumenda molestias rem vitae minus alias, debitis numquam ab veritatis eum! Assumenda, vel mollitia ipsam, cum dicta harum.</p>
+        </div>    
+
+        <!--Javascript JQuery-->
+        <script>
+            /*Referencia a la Imagen*/
+
+            //invocamos la funcion y le pasamos todas las imagenes por parametro
+            // modificamos el attr --> atributo src
+            // y le pasamos el url src
+            $('img').attr('src','http://placekitten.com/g/200/200');
+
+            /*Usnado encadenamiento de funciones*/
+            $('img').removeClass('img-circle')  // quitamos la clase circulo
+                .addClass('img-thumbnail'); // ponemos la clase thimbnail
+
+
+            /*Referencia al parrafo*/ 
+
+            // invocamos la funcion y le pasamos por parametro una clase con el . punto
+            //children invoca a todos los hijos del contenedor
+            var a = $('.col-sm-5').children();
+            // mostramos en consola la varible
+            console.log(a);
+
+            // invocamos la funcion y le pasamos una clase
+            // fin significa enctrame la etiqueya que paso por parametro
+            // .text con esa propiedad modifcamos el texto de las p
+            $('.col-sm-5').find('p').text('Saludos soy Ingeniero de sistemas');
+
+
+
+            /*Referencia al parrafo*/
+
+            // invocamos la funcion y pasamos por parametro una clase
+            // .children('p') selecionamos a los hijos de etiqeta p
+            //.eq(2) selecionamos la posicion 2 de acuerdo a la cantidad de hijos que hallan 
+            var b =  $('.col-sm-5').children('p').eq(2);
+            console.log(b);
+            // totmamos la variable b que es la seleccion de arriba
+            // .html modificamos el html(), con etiquetas en html o texto
+            b.html('Hola soy el Ingeniero  <u>GUSTAVO</u>');
+
+
+
+            /*Referencia a la lista ul li*/
+
+
+            //invocamos la funcion y le pasamos por parametro ul li 
+            // .eq(2) selecionamos la posicion 2 de los li
+            //. css modifamos el estilo de solo ese elemento
+            $('ul li')
+                .eq(2)
+                .css("color","red");
+
+            $('ul li')
+                .eq(1)
+                .addClass('btn btn-danger')     
+                .css('font-size','50px');
+            //el end() hace que finalice la seleccion del .eq()
+            $('ul li')
+                .eq(4)
+                .addClass('bg-primary').end();
+
+            //el end() hace que finalice la seleccion del .eq()                  
+            $('ul li')
+                .eq(0)
+                .addClass('btn btn-primary btn-lg').end();
+
+
+
+            /*Rferencia parrafos finales*/
+
+            $('div#miParrafo p') //seleccionamos al parrafo dentro del div
+                .eq(2)  //escogemos el parrafo en la posicion 2 qe va de 0 - 2
+                .addClass('parrafos').end();    // le añadimos la clase y finalizamos la linea
+
+        </script>
+
+
+
+    </body>
+</html>

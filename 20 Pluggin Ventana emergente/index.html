@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+
+        <!--Enlazando en fontawesome para los iconos-->
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--PLUGIN DE JAVASCRIPT TWWINMAX DE GRENSOCK EN SU VERSION COMPRIMIFA-->
+        <script type="text/javascript" src="js/TweenMax.min.js"></script>
+
+
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Pluggin Ntoficacion Alerta</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+
+        <div class="container" align="center">
+            <h1>Big Box: <small>Notificacion</small></h1>
+            <hr>
+
+           <!--Animacion de cargando-->
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+
+
+
+            <!-- <div class="bigBox-Fondo"></div>-->
+            <!--       
+<div class="bigBox-contenedor">  
+<div class="bigBox-Cerrar">
+<i class="fa fa-times"></i>
+</div>
+
+
+<div class="bigBox-Circulo">
+
+<i class="fa fa-thumbs-o-up fa-2x"></i>
+</div>
+
+<div class="bigBox-Contenido">
+<span class="bixBox-Titulo">Genial</span>
+<span class="bigBox-Texto">Estamos listo para emprezar!</span>
+</div>
+
+<button class="bigBox-Boton">Empezar Curso</button>
+</div>-->
+
+            <a href="" target="_blank"></a>
+
+            <button class="btn btn-primary" id="botonLlamador">
+                Click para aparecer la ventan Emergente
+            </button>
+
+        </div>
+
+
+    </body>    
+    <!--Inconcando al script donde estan las animaciones-->
+    <script type="text/javascript" src="js/javascript.js"></script>
+
+    <script type="text/javascript">
+
+        //dar click en el boton princial llamara la funcio creada en el scrip
+        $('button#botonLlamador').on('click' , function(){
+            //llamando a la funcion y le pasamos los parametros que reqiuere
+            $.bigBox({
+                fa: "fa-blind",
+                titulo: "Melissa",
+                texto: "No se baño hoy",
+                textBoton: "Sera que se bañara ?",
+                url: "https://www.google.com.co/"
+            });
+
+        });
+
+
+    </script>
+
+
+
+</html>

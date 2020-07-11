@@ -1,0 +1,8 @@
+div.cajaRoja
+{
+    /*Es necesario tener una posicion para que jequery lo entienda*/
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background-color: darkred;
+}

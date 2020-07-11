@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <!--Estilos-->
+        <style>
+
+        </style>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container es propio de boostrap-->
+        <div class="container text-center">
+
+            <h1>Objetos Practicos <small>Ejemplo de Vehiculo</small></h1>
+
+
+
+
+
+
+            <div class="divVistaPrevia">
+                <img src="img/negro.png" alt="" id="imgCarro" class="img-responsive">
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    <select name="" id="cmbColor" class="form-control">
+                        <option value="blanco">Blanco</option>
+                        <option value="negro">Negro</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="gris">Gris</option>
+                        <option value="amarillo">Amarillo</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+       <!--jquery-->
+        <script>
+      
+            /*encapsualamos jquery en una funcion para no confundir con los demas scrits*/
+            
+            (function(){
+                
+                
+                var teslaView = 
+                    {
+                        
+                    }
+                
+                
+                
+            /*Control del evento de cambio*/    
+                
+                //seleccionamos el select
+                //evento on change, deteceta cuando cambio de opcion
+                //paso una funcion
+                $('select#cmbColor').on( 'change',function() {
+                    //el this es el mismo select, 
+                    //val() captura el valor seleccionado
+                    var color = $(this).val();
+                    // variable url que captura la url de las iamgenes
+                    var url = "img/"+color+".png";
+                    console.log(url);
+                    
+                    //capturamos la etiqueta img
+                    //modficamos el atriuto src
+                    //le pasamos por parametro el url
+                    $('img#imgCarro').attr( 'src', url )
+                })
+                
+                
+            }());
+        </script>
+
+    </body>
+</html>

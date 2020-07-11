@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" type="text/css" href="estilos%2520propios/estilos.css">
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+        <style>
+        
+            .imagenGira:hover
+            {
+                width: 500px;
+                height: 500px;
+                border: 10px solid red;
+                transition: all 1s ease;
+            }
+        
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Container clase de bosstrap-->
+        <div class="container">
+            <h1>Usando BOOSTRAP</h1>
+            <ul>
+                <li><span class="label label-primary">Hola 1</span></li>
+                <li>Hola 2</li>
+                <li>Hola 3</li>
+                <li>Hola 4</li>
+                <li>Hola 5</li>
+            </ul>
+        </div>
+
+        <button class="btn btn-primary btn-lg active">Soy Un Boton !!!</button>
+
+
+        <img src="http://lorempixel.com/400/200/" alt="" class="img-rounded">
+        <img src="http://lorempixel.com/400/200/" alt="" class="img-circle">
+        <img src="http://lorempixel.com/400/200/" alt="" class="img-thumbnail" id="inicial">
+        
+        
+        
+        <script type="text/javascript">
+            // invocamos a jquery le pasamos un id por parametro
+            //le añadimos una clase que esta editada en el style para cambiar el css
+                 $('#inicial').addClass('imagenGira');
+        
+        </script>
+    </body>
+</html>

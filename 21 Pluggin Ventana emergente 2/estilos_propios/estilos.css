@@ -1,0 +1,133 @@
+
+div.smallBox-contenedor
+{
+    position: fixed;
+    width: 400px;
+    right: 50px;
+    bottom: 50px;
+    margin: 0;
+    padding: 0;
+    z-index: 10; 
+
+}
+
+div.smallBox-foto
+{
+    position: relative;
+    float: left;
+    width: 100px;
+    margin-top: 30px;
+    margin-right: 20px;
+
+
+}
+
+
+div.smallBox-foto img
+{
+    position: relative;
+    border-radius: 100%;
+    width: 100%;
+    height: 100px;
+}
+
+
+
+div.smallBox-textoContendor
+{
+    float: left;
+    width: 277px;
+}
+
+div.smallBox-textoContendor span
+{
+    position: relative;
+    display: block;
+}
+
+span.smallBox-titulo
+{
+    font-size: 20px;
+    color: #5b5b5b;
+}
+
+span.smallBox-subTitulo
+{
+    font-size: 18px;
+    color: #291818;
+}
+
+
+div.smallBox-cajaColor
+{
+    width: 277px;
+    height: 60px;
+    /*Truco para centrar el texto vertical*/
+    line-height: 60px;
+    float: left;
+    background-color: #82b800;
+    margin-top: 15px;
+    color: white;
+    padding-left:40px;
+    display: block;
+    border-radius: 7px;
+    overflow: hidden; /*Ocultar lo que sobre*/
+
+
+}
+
+i.fa-bell-o
+{
+    margin-right: 10px;
+}
+
+div.smallBox-colorTexto
+{
+    font-size: 17px;
+    float: left;
+}
+
+div.smallBox-colorIcon
+{
+    margin-left: 10px;
+    float: right;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    width: 60px;
+    background-color:#77ab00;
+
+}
+
+
+div.smallBox-sombra
+{    
+    position: absolute;
+    left: 103px;
+    width: 300px;
+    height: 5px;
+    margin-top: 155px;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 100%;
+    /*Sombra*/
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,.1);
+    box-shadow: 0 0 5px 0px rgba(0,0,0,.1);
+}
+
+
+div.smallBox-pico
+{
+    content: ' ' ;
+    float: left;
+    position: relative;
+    top: 107px;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-right: 8px solid #82b800;
+    border-left: 0px solid #82b800;
+}
+
+

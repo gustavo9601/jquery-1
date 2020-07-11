@@ -1,0 +1,40 @@
+
+/*
+MI JSON COMO EJEMPLO QUE PASARE A LA WEB
+
+*/
+[
+    {
+        "nombre": "Gustavo",
+        "Edad": "20",
+        "Tags":[
+            "programador",
+            "Desarrolador"
+        ]
+    },
+    {
+        "nombre": "Melissa",
+        "Edad": "10",
+        "Tags":[
+            "No hace un carahao",
+            "Desarrolador",
+            "No hace nada"
+        ]
+    },    
+    {
+        "nombre": "MARTA",
+        "Edad": "40",
+        "Tags":[
+            "cIENTIFICA",
+            "Desarrolador"
+        ]
+    },    
+    {
+        "nombre": "sERGIO",
+        "Edad": "202",
+        "Tags":[
+            "programador",
+            "Desarrolador"
+        ]
+    },
+]

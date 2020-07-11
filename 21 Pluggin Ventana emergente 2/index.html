@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Viwport para responsive-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <link rel="stylesheet" href="estilos_propios/estilos.css">
+
+        <!--Enlazando en fontawesome para los iconos-->
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+        <!--Enlazando el JQuery-->
+        <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+
+        <!--PLUGIN DE JAVASCRIPT TWWINMAX DE GRENSOCK EN SU VERSION COMPRIMIFA-->
+        <script type="text/javascript" src="js/TweenMax.min.js"></script>
+
+
+
+        <!--Enlzace del boostrap-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <meta charset="UTF-8">
+
+
+        <title>Pluggin Ntoficacion Alerta 2</title>
+    </head>
+    <body>
+
+
+
+        <h1>Small: <small>Notificacion</small></h1>
+        <hr>
+
+        <!--div princiapl--
+<div class="smallBox-contenedor">
+<!--Div de la foto--
+<div class="smallBox-foto">
+<img src="img/yo.jpg" alt="">
+</div>
+
+
+<!--div de pico--
+<div class="smallBox-pico"></div>
+<!--Div del contenido--
+<div class="smallBox-contenido">
+
+<div class="smallBox-textoContendor">
+<span class="smallBox-titulo">Al Aire</span>
+<span class="smallBox-subTitulo">Desarrollador Gus !</span>
+</div>
+
+<div class="smallBox-cajaColor">
+
+<div class="smallBox-colorTexto">
+<i class="fa fa-bell-o"></i>Gustavo marquez
+</div>
+<div class="smallBox-colorIcon fa fa-envelope-o fa-2x">
+
+</div>
+
+</div>
+Sombra--
+<div class="smallBox-sombra">
+
+</div>
+--
+</div>
+
+</div>-->
+
+
+        <!-- Enlazando mi javascript-->
+        <script type="text/javascript" src="js/javascript.js"></script>
+
+        <!--incocando a la funcion del scriot de arriba y le pasamos los parametros-->
+        <script type="text/javascript">
+            //seleccionamos el documente = pagina completa
+            //ready = indica que ya cargo la pagina
+            //le pasamos una funcion por parametro
+            $(document).ready(function(){
+
+                //invocamos a nuestra funcion y le pasamso parametros
+                $.smallBox({
+                    titulo : "Melissa y el pelo",
+                    subtitulo : "Esta de rojo",
+                    contenido : "Ya nopeliando",
+                    fa : "fa-envelope-o",
+                    img: "img/meli.jpg",
+                    color: "",
+                    tiempoSalida : 2000
+                });
+
+
+                console.log("Pagina cargada...");
+
+
+
+            });
+
+        </script>
+
+
+    </body>
+
+
+
+
+</html>

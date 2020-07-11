@@ -1,0 +1,35 @@
+
+
+div#imgPequenas img
+{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+div#imgGrandes img
+{
+    margin-top: 27px;
+    width: 100%;
+}
+
+div#descripcion{
+    margin-top: 50px;
+    padding: 10px;
+}
+
+div#descripcion p
+{
+    font-size: 20px;
+    align-text:justify;
+}
+
+
+
+@media (max-width: 600px)
+{
+    div#imgPequenas img
+    {
+        width: 100px;
+    }
+}
